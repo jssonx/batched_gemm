@@ -1,0 +1,5 @@
+module load cuda/12.2.1
+module load cudnn/8.9.0.131
+
+srun -A a --time=00:10:00 --nodes=1 --ntasks-per-node=1 \
+--partition=gpuA40x4 --gres=gpu:1 --mem=10g --gpu-bind=closest --exclusive --pty /bin/bash
